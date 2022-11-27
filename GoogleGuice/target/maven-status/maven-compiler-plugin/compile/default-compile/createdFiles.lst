@@ -1,0 +1,12 @@
+com\ProductModuleMap.class
+com\Helper.class
+com\module\MyGuiceModule.class
+com\module\ChildTwoModule.class
+com\service\ChildTwoService.class
+com\Resource\ChildTwoResource.class
+com\App.class
+com\service\ParentService.class
+com\Resource\ChildOneResource.class
+com\Resource\ParentResource.class
+com\service\ChildOneService.class
+com\module\ChildOneModule.class

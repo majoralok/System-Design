@@ -29,9 +29,34 @@ https://medium.com/techlog/consistent-hashing-with-bounded-loads-using-a-red-bla
 
 Git Used Merkle Tree for Diff checking and commiting.
 https://www.geeksforgeeks.org/introduction-to-merkle-tree/
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CAP Theorem or PACELC:
 It says that if there is partition then Availability or Consistency will take a hit.
 If 'E' ELSE ( not partition) then system will be available by default, and in that case Latency or Consistency will take a hit.
 if system is high available and low latency then it will be not eventual consistent. or if system is avaiable and eventual consistent and it will have high latency.( this is case of no partition).
 
+The PACELC theorem is an extension to the CAP theorem, both of which provide frameworks for understanding trade-offs in distributed systems. Here's a breakdown:
+
+CAP Theorem:
+
+C: Consistency - All nodes in the system have the same data at the same time.
+A: Availability - Every request receives a response, regardless of success or failure.
+P: Partition Tolerance - The system continues to operate even when network partitions occur.
+The CAP theorem states that only two of these properties can be achieved simultaneously in a distributed system. In simpler terms, you can have two out of these three:
+
+Highly consistent but potentially unavailable: Requires waiting for all nodes to synchronize before responding to requests, which can be slow during partitions.
+Highly available but potentially inconsistent: Allows reads and writes even during partitions, but data might be outdated across different nodes.
+Partition tolerant but not necessarily consistent or available: Works during partitions but may exhibit either inconsistency or unavailability depending on the chosen approach.
+PACELC Theorem:
+
+The PACELC theorem builds on the CAP theorem by introducing another factor:
+
+L: Latency - The time it takes for a request to be processed and a response to be received.
+PACELC states that while the CAP trade-off applies during network partitions, even in normal operation, there's a trade-off between latency and consistency. Achieving low latency often involves relaxing consistency guarantees, such as using eventual consistency models where updates eventually propagate across all nodes but may not be immediately reflected everywhere.
+
+In summary:
+
+Both CAP and PACELC help understand the limitations and trade-offs in distributed systems regarding data consistency, availability, and now, latency.
+PACELC expands on CAP by showing that even without partitions, achieving low latency may come at the cost of some consistency.
+Choosing the right balance between these properties depends on the specific needs and requirements of your distributed system.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

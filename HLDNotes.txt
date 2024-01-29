@@ -1,0 +1,37 @@
+Load balancing Policy
+	1. Round Robin
+	2. Weighted Round Robin
+	3. Least Connection
+	4. Least Response Time
+	5. IP based Hashing/Layer 4
+	6. Consistent Hashing
+	7. Dynamic Load Balancing: Run Time server load calculator to distribute requests.
+	8. Geography based
+	9. Content Based request grouping/segregation or Layer 7 based
+
+Content Based LB:
+
+• Web Applications: Layer 7 load balancing is commonly used for distributing HTTP and HTTPS traffic in web applications. It can route requests based on URL patterns, content types, or specific application features.
+• Content Delivery Networks (CDNs): CDNs often leverage Layer 7 load balancing to efficiently distribute content by considering factors like content type, user location, and the type of device accessing the content.
+• Application Gateways: Layer 7 load balancing is integral to application gateways and API gateways, ensuring that requests are directed to the appropriate backend service based on the nature of the request.
+
+
+Heath Check vs Hear Beat:
+Health Check is when load balance hit /health end point whereas in heart beat each server calls/send single to LB that its alive. (heartBeat Miss)
+
+
+Uneven distribution of data is called skew.
+
+Consistent Hashing:
+http://highscalability.com/blog/2023/2/22/consistent-hashing-algorithm.html#:~:text=Consistent%20hashing%20implementation&text=The%20self%2Dbalancing%20binary%20search,%2C%20insert%2C%20and%20delete%20operations.
+https://medium.com/techlog/consistent-hashing-with-bounded-loads-using-a-red-black-tree-b5aaf0d8540f
+
+
+Git Used Merkle Tree for Diff checking and commiting.
+https://www.geeksforgeeks.org/introduction-to-merkle-tree/
+
+CAP Theorem or PACELC:
+It says that if there is partition then Availability or Consistency will take a hit.
+If 'E' ELSE ( not partition) then system will be available by default, and in that case Latency or Consistency will take a hit.
+if system is high available and low latency then it will be not eventual consistent. or if system is avaiable and eventual consistent and it will have high latency.( this is case of no partition).
+

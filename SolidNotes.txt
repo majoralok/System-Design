@@ -1,0 +1,64 @@
+Open Close: Members variable of a class must be private, even derived class should not call them directly. Because Now, no function that depends upon a variable can be closed
+with respect to that variable.
+
+Try to store variations in some table or enum. To avoid future modification.
+
+No Global Variables -- Ever.
+No module that depends upon a global variable can be closed against any other
+module that might write to that variable.
+
+Runtime Type Identification is also avoided.  i.e using instanceOf
+
+
+-------------
+Dependency inversion says the same thing what bridge pattern does.
+
+High level module should force low level module to change, not the vice versa.
+Low level module should not be the reason for high level to change because high level signifies the policy or rule or business logic. 
+
+
+When high level modules depend upon low level modules, it becomes very difficult to reuse those high level modules in different contexts. However, when the high level modules are 
+independent of the low level modules, then the high level modules can be reused quite simply.
+
+
+
+Interface segregation is structural pattern, that oppose fat interfaces.
+
+--------------LSP-------------
+So what happened? Why did the apparently reasonable model of the Square and Rect-
+angle go bad. After all, isn’t a Square a Rectangle? Doesn’t the ISA relationship
+
+hold?
+
+No! A square might be a rectangle, but a Square object is definitely not a Rectan-
+gle object. Why? Because the behavior of a Square object is not consistent with the
+
+behavior of a Rectangle object. Behaviorally, a Square is not a Rectangle! And it
+is behavior that software is really all about.
+The LSP makes clear that in OOD the ISA relationship pertains to behavior. Not
+intrinsic private behavior, but extrinsic public behavior; behavior that clients depend upon.
+For example, the author of function g above depended on the fact that Rectangles
+
+behave such that their height and width vary independently of one another. That indepen-
+dence of the two variables is an extrinsic public behavior that other programmers are likely
+
+to depend upon.
+In order for the LSP to hold, and with it the Open-Closed principle, all derivatives
+must conform to the behavior that clients expect of the base classes that they use.
+
+-------------------------
+...when redefining a routine [in a derivative], you may only replace its
+precondition by a weaker one, and its postcondition by a stronger one.
+
+In other words, when using an object through its base class interface, the user knows
+only the preconditions and postconditions of the base class. Thus, derived objects must not
+expect such users to obey preconditions that are stronger then those required by the base
+class. That is, they must accept anything that the base class could accept. Also, derived
+classes must conform to all the postconditions of the base. That is, their behaviors and out-
+puts must not violate any of the constraints established for the base class. Users of the base
+
+class must not be confused by the output of the derived class.
+Clearly, the postcondition of Square::SetWidth(double w) is weaker than
+the postcondition of Rectangle::SetWidth(double w) above, since it does not
+conform to the base class clause “(itsHeight == old.itsHeight)”. Thus,
+Square::SetWidth(double w) violates the contract of the base class.

@@ -33,7 +33,7 @@ https://www.geeksforgeeks.org/introduction-to-merkle-tree/
 CAP Theorem or PACELC:
 It says that if there is partition then Availability or Consistency will take a hit.
 If 'E' ELSE ( not partition) then system will be available by default, and in that case Latency or Consistency will take a hit.
-if system is high available and low latency then it will be not eventual consistent. or if system is avaiable and eventual consistent and it will have high latency.( this is case of no partition).
+-> If system has low latency then it will not be eventual consistent and if system is eventual consistent then it will have high latency.( this is case of no partition).
 
 The PACELC theorem is an extension to the CAP theorem, both of which provide frameworks for understanding trade-offs in distributed systems. Here's a breakdown:
 

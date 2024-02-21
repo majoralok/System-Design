@@ -60,3 +60,33 @@ Both CAP and PACELC help understand the limitations and trade-offs in distribute
 PACELC expands on CAP by showing that even without partitions, achieving low latency may come at the cost of some consistency.
 Choosing the right balance between these properties depends on the specific needs and requirements of your distributed system.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+n high-level system design, the client request typically lands on an API Gateway, which acts as the single entry point for all external interactions with the system. Here's how it works:
+
+1. Client Request: The client sends a request, usually through an HTTP API call, to the API Gateway. This request can originate from various sources like web browsers, mobile apps, or other systems.
+
+2. API Gateway: The API Gateway performs several tasks:
+
+* **Authentication and Authorization:** It validates the client's identity and ensures they have permission to access the requested resources.
+* **Routing:** It routes the request to the appropriate backend service based on pre-defined rules (e.g., URL path, headers).
+* **API Management:** It performs functions like rate limiting, throttling, and versioning to manage API traffic effectively.
+* **Protocol Translation:** It may convert the client's request format (e.g., JSON) to the format expected by the backend service.
+3. Web API & Load Balancer:
+
+* **Web API:** The routed request lands on the designated web API, which is a specific application component responsible for handling the request's logic. This might involve database interaction, data processing, and generating a response.
+* **Load Balancer:** If the system has multiple web APIs, a load balancer distributes incoming traffic among them to ensure even utilization and prevent overloading any single server.
+Overall Flow:
+
+Client -> API Gateway -> Load Balancer (optional) -> Web API -> Database/Services (optional) -> Response
+Benefits:
+
+Centralized entry point: simplifies security and management.
+Flexibility: API Gateway can handle diverse clients and protocols.
+Scalability: Load balancer distributes traffic for improved performance.
+Decoupling: Web APIs are independent, allowing for easier development and maintenance.
+Additional Considerations:
+
+Different types of API Gateways exist (e.g., open-source, managed).
+The specific design depends on the system's complexity and needs.
+Security measures like encryption and access control are crucial.
+I hope this explanation clarifies where client requests land and how API gateways, web APIs, and load balancers play a role in high-level system design. Feel free to ask if you have further questions!
+------------------------------------------------------------------------------------------------------------------

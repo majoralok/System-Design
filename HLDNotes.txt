@@ -91,4 +91,13 @@ Security measures like encryption and access control are crucial.
 I hope this explanation clarifies where client requests land and how API gateways, web APIs, and load balancers play a role in high-level system design. Feel free to ask if you have further questions!
 ------------------------------------------------------------------------------------------------------------------
 Failover is the ability to seamlessly and automatically switch to a reliable backup system. Either redundancy or moving into a standby operational mode when a primary system component fails should achieve failover and reduce or eliminate negative user impact.
+------------------------------------------------------------------------------------------------------------------
+A WebSocket is a communication protocol that provides full-duplex communication channels over a single TCP connection. It enables real-time, event-driven communication between a client and a server.
 
+Drawbacks of Websocket:
+1. Some older browsers does not support, so application will not work in that.
+2. Some Proxy and Firewall does not support or block websockets.
+3. Stateful Nature: Unlike traditional HTTP, which is stateless, WebSockets are stateful. This means that the server needs to 
+   maintain the connection state for each client, leading to increased memory usage and potential scalability challenges.
+4. Security Considerations: With the persistent connection established by WebSockets, there is a need for proper security measures 
+   to protect against potential vulnerabilities.

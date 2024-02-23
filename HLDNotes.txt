@@ -90,3 +90,5 @@ The specific design depends on the system's complexity and needs.
 Security measures like encryption and access control are crucial.
 I hope this explanation clarifies where client requests land and how API gateways, web APIs, and load balancers play a role in high-level system design. Feel free to ask if you have further questions!
 ------------------------------------------------------------------------------------------------------------------
+Failover is the ability to seamlessly and automatically switch to a reliable backup system. Either redundancy or moving into a standby operational mode when a primary system component fails should achieve failover and reduce or eliminate negative user impact.
+

@@ -1,0 +1,3 @@
+This file contains some usefull Study materials and github repository links
+
+https://whimsical.com/system-design-stock-trading-platforms-scaler-7HP2AhSZkeRhTQTkXSKqH1

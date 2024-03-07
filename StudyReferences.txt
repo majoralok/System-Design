@@ -1,3 +1,10 @@
 This file contains some usefull Study materials and github repository links
 
 https://whimsical.com/system-design-stock-trading-platforms-scaler-7HP2AhSZkeRhTQTkXSKqH1
+
+https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/coffee-vending-machine.md
+
+https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-parking-lot.md
+
+https://github.com/prasadgujar/low-level-design-primer/blob/master/solutions.md
+

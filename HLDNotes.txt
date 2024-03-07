@@ -101,3 +101,17 @@ Drawbacks of Websocket:
    maintain the connection state for each client, leading to increased memory usage and potential scalability challenges.
 4. Security Considerations: With the persistent connection established by WebSockets, there is a need for proper security measures 
    to protect against potential vulnerabilities.
+
+------------------------------------------------------------------------------------------------------------------------
+Scalability:
+Advantages:
+1. Cost Effective.
+2. Better Performace(Performace can not be increased indefinitely, after some limit it does not improve) (Ahdalm's Law)
+3. High Throughput. 
+4. High Availablity
+5. Disaster Management.
+
+Where Scalability Applied:
+1. Application Server.
+2. DataBase Layer.
+3. Distributed Computing 

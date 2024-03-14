@@ -115,3 +115,17 @@ Where Scalability Applied:
 1. Application Server.
 2. DataBase Layer.
 3. Distributed Computing 
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+What are differernt Caching Pitfalls???
+1.
+Cache Invalidation: This is perhaps the biggest challenge.  When the underlying data source (like a database) changes, the corresponding cached data becomes stale.  If you don't have a mechanism to invalidate or update the cached data, users might see outdated information. There are different invalidation strategies like time-based (data expires after a set time) or event-based (cache invalidated upon a specific event like data update). Choosing the right approach depends on your specific needs and data update frequency.
+2.
+Cache Stampede: As you already explored, this happens when a large number of requests hit the system around the same time for data where the cached version is about to expire. This triggers a race condition where all requests bypass the cache and bombard the database to fetch fresh data, overwhelming it. Techniques like mutual exclusion (locks) or randomized expiration can help prevent this stampede.
+3.
+Cache Penetration: This occurs when requests arrive for data that isn't present in the cache, but also doesn't exist in the original data source either. This can be caused by invalid user requests or even malicious attacks. Frequent cache misses for non-existent data can overload the database.  Input validation and negative caching (storing info that a key doesn't exist) can mitigate this.
+4.
+Cache Size and Cost: Caches are not unlimited.  It's important to choose the right size for your cache based on your data access patterns and available resources.  Large caches can consume significant storage space. Additionally,  constantly updating or invalidating cache entries can incur some overhead. Striking a balance between cache size, efficiency, and cost is crucial.
+5.
+Cache Complexity:  While caching can improve performance, it can also add complexity to your system.  You'll need to consider factors like cache invalidation strategies, cache coherence (ensuring consistency across multiple cache layers), and managing cache updates during deployments.

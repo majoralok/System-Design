@@ -1,0 +1,57 @@
+Build an application that allows users to post pictures and like pictures posted by others on it.
+Users may also follow other users.
+ 
+Functionalities required:
+A new user should be able to register to the application.
+A user should be able to post a picture with a caption. For simplicity, consider the picture 
+as a string value
+A user should be able to Follow/UnFollow any number of other users of their choice. UnFollow operation is supposed to reverse the Follow operation.
+A user should be able to Like/UnLike any number of pictures posted by others. UnLike operation is supposed to reverse the Like operation.
+Any user should be able to see posted pictures by everyone on the app. Pictures should be sorted by created time. (Last created should come first)
+Show the number of likes on a picture at any point of time.
+Show list of followers of a user at any point of time.
+Example:
+Sample Data:
+RegisterUser(User1, UserName1); - Register User1
+Post(User1, Picture1, caption1); - User1 posts Picture1, caption1
+Post(User1, Picture2, caption2); - User1 posts Picture2, caption2
+RegisterUser(User2, UserName2); - Register User2
+Like(User2, Picture1); - User2 likes Picture1 
+Follow(User2, User1); - User2 follows User1
+RegisterUser(User3, UserName3); - Register User3
+Post(User3, Picture3, caption3); - User3 posts Picture3, caption3
+RegisterUser(User4, UserName4); - Register User4
+RegisterUser(User5, UserName5); - Register User5
+Follow(User4, User1); - User4 follows User1
+Follow(User5, User1); - User5 follows User1
+ 
+Case 1:
+Input - showPictures
+Output - [Picture3,Picture2,Picture1]
+ 
+Case 2:
+Input - getLikes(Picture1)
+Output - 1
+ 
+Case 3:
+Input - getFollowers(User1)
+Output - [User2,User4,User5]
+ 
+ 
+ 
+Bonus:
+Promote a user to star user if he has more than x followers(For below example x = 2). Get star users
+Show list of users the particular user follows.
+Show pictures of only those users whom I follow. If I don’t follow any user, result should be empty
+ 
+Case 1:
+Input - showPictures(User2);
+Output - [Picture2, Picture1]; - Picture3 won't appear because User2 follows User1 and not User3
+ 
+Case 2:
+Input - getMyFollowers(User2);
+Output -  [User1]
+ 
+Case 3:
+Input - getStarUsers();
+Output -  [User1]

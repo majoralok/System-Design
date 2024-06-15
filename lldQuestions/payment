@@ -1,4 +1,5 @@
-Source: https://leetcode.com/discuss/interview-question/object-oriented-design/3846271/LLD-or-Design-a-Payment-Gateway
+Source1: https://leetcode.com/discuss/interview-question/object-oriented-design/3846271/LLD-or-Design-a-Payment-Gateway
+Source2: https://docs.google.com/document/d/1MRTrxSeIu65vi8ReL9CLgVRwhvIfsb2khHCLqKidaXs/edit
 
 Design a Payment Gateway
 Payments is an integral component of any e-commerce or fintech. With the advent of digital india, we have seen different types of payments ecosystem rising up - Payments gateways, UPI, Rupay Network etc. These are easy to integrate and any org can get started with this in a matter of days.

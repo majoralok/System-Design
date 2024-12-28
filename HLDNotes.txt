@@ -129,3 +129,36 @@ Cache Penetration: This occurs when requests arrive for data that isn't present 
 Cache Size and Cost: Caches are not unlimited.  It's important to choose the right size for your cache based on your data access patterns and available resources.  Large caches can consume significant storage space. Additionally,  constantly updating or invalidating cache entries can incur some overhead. Striking a balance between cache size, efficiency, and cost is crucial.
 5.
 Cache Complexity:  While caching can improve performance, it can also add complexity to your system.  You'll need to consider factors like cache invalidation strategies, cache coherence (ensuring consistency across multiple cache layers), and managing cache updates during deployments.
+
+Why use Mongodb instead of casandra & Riak for Url Shortener:
+1. Casandra is write heavy db which support limited query pattern.
+2. Casandra focus on high availability and eventual consistency which could result in duplicate data.
+3. Mongo has story support for PK and unique index.
+4. Casandra follows leader less approach while mongo support master slave which could impact consistency in Casandra.
+
+MongoDB
+	Architecture: Single-leader with strong consistency.
+	Read Performance:
+		High throughput with the ability to distribute reads across follower replicas.
+		No read-repair mechanism, ensuring faster and consistent reads.
+	Write Performance:
+		Writes go through the leader, ensuring data consistency.
+		Slightly slower than leader-less systems for high write volumes.
+	Fault Tolerance:
+		Handles node failures with leader election (few seconds of write unavailability).
+		Reads remain available from follower replicas during leader election.
+	Best Fit:
+		Ideal for read-heavy, latency-sensitive applications where consistency is critical.
+Cassandra
+	Architecture: Leader-less with eventual consistency.
+	Read Performance:
+		Slower due to the read-repair mechanism for consistency across replicas.
+		Optimized for predefined query patterns (e.g., time-series data) rather than random lookups.
+	Write Performance:
+		Highly optimized for fast, distributed writes.
+		Can accept writes during node failures, prioritizing availability.
+	Fault Tolerance:
+		Highly available even during partitions or failures.
+		May introduce consistency challenges during concurrent writes.
+	Best Fit:
+		Suitable for write-heavy, distributed systems requiring high availability and tolerance to inconsistency.
